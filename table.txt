@@ -1,0 +1,15 @@
+CREATE TABLE contact( id int PRIMARY KEY AUTO_INCREMENT, name varchar(100), email varchar(100), location varchar(100), subject varchar(100),message text);
+
+CREATE TABLE content( id int PRIMARY KEY AUTO_INCREMENT, title varchar(100), category varchar(100) UNIQUE,message text,image varchar(255),create_at datetime DEFAULT null,updated_at datetime DEFAULT null );
+
+CREATE TABLE `cv` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `file_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `uploaded_on` datetime NOT NULL,
+ `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE category( id int PRIMARY KEY AUTO_INCREMENT, category varchar(100), tag varchar(100));
+
+CREATE TABLE project( id int PRIMARY KEY AUTO_INCREMENT, title varchar(100),description text,code_url text,video_url text);
